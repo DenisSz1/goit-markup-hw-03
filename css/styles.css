@@ -6,6 +6,7 @@
 /* білий rgba(255, 255, 255, 1) */
 /*фон кнопки rgba(245, 244, 250, 1);*/
 /* footer телефон email rgba(255, 255, 255, 0.6) */
+/* card bg #EEEEEE*/
 
 :root {
     --primary-text-color: rgba(117, 117, 117, 1);
@@ -17,6 +18,7 @@
     --accenr-color: rgba(33, 150, 243, 1);
     --filter-btn-color: rgba(245, 244, 250, 1);
     --footer-white-color: rgba(255, 255, 255, 0.6);
+    --bg-card: #EEEEEE;
 }
 
 body {
@@ -25,9 +27,29 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    display: flex;
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ 
+
 /*logo*/
 
 .logo {
+    margin-right: 93px;
+
     color: var(--logo-color);
  
     font-family: 'Raleway', sans-serif;;
@@ -44,11 +66,20 @@ body {
 /*navigation*/
 
 .nav-list {
-    list-style: none;
-
+    display: flex;
+    
     font-size: 14px;
     line-height: 1.17;
-    font-weight: 500;
+    font-weight: 500;  
+}
+
+.nav-list .item {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.nav-list .item:not(:last-child) {
+    margin-right: 50px;
 }
 
 .nav-list .link  {
@@ -57,8 +88,14 @@ body {
 }
 
 .contact-list {
-    list-style: none;
+    display: flex;
+    margin-left: auto;
 }
+
+.contact-list .link {
+    margin-left: 40px;
+}
+
 .contact-list .link,
 .contact-list .tel {
     color: var(--primary-text-color);
@@ -82,14 +119,36 @@ body {
     color: var(--accenr-color);
 }
 
+header {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ECECEC; 
+}
+
 /*page studio start*/
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 /*banner*/
 
 .main {
     background-color: var(--bcg-gray-color);
 }
 
+.main .container {
+    display: block;
+}
+
 .main-banner {
+    width: 696px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
     color: var(--primary-white-color);
 
     font-size: 44px;
@@ -98,6 +157,13 @@ body {
 }
 
 .main .btn {
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 24px;
+    border-radius: 4px;
+
     background-color: var(--accenr-color);
     color: var(--primary-white-color);
 
@@ -109,27 +175,48 @@ body {
 
 /*section features*/
 
-.section-list,
-.team-list {
-    list-style: none;
+.section .hide {
+    display: none;
+}
+
+.section-list {
+    display: flex;
 }
 
 .section .subtitle {
+    margin: 0;
+
     color: var(--primary-title-color);
 
     font-size: 14px;
     line-height: 1.17;
 }
 
-.section p {
+.section-list p {
+    margin-top: 10px;
+    margin-bottom: 0;
+
     font-size: 14px;
     line-height: 1.71;
 }
 
+.section-list .item:not(:last-child) {
+    margin-right: 30px;
+}
+
 /*works*/
 
-.section-title,
-.team-title {
+.section .container {
+    flex-wrap: wrap;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 50;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
     color: var(--primary-title-color);
 
     font-size: 36px;
@@ -138,11 +225,41 @@ body {
 
 /*team*/
 
+.team .container {
+    flex-wrap: wrap;
+}
+
 .team {
     background-color: var(--bcg-secondary-gray-color);
 }
 
+.team-list {
+    display: flex;
+}
+
+.team-list .item {
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+}
+.team-list .item:not(:last-child) {
+    margin-right: 30px;
+}
+.team-title {
+    margin-top: 0;
+    margin-bottom: 50;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    color: var(--primary-title-color);
+
+    font-size: 36px;
+    line-height: 1.17;
+}
 .team .subtitle {
+    margin-top: 30px;
+    text-align: center;
+
     color: var(--primary-title-color);
 
     font-size: 16px;
@@ -150,15 +267,31 @@ body {
     font-weight: 500;
 }
 
+.team-list p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
 /*page studio end*/
 
 /*page portfolio start*/
+
+.section .container {
+    flex-direction: column;
+}
+
 /*button filter*/
 
 .btn-list {
-    list-style: none;
+    display: flex;
 }
+
 .btn {
+    display: inline-block;
+    padding: 6px 22px;
+    border: none;
+    border-radius: 4px;
+
     color: var(--primary-title-color);
     background: var(--filter-btn-color);
 
@@ -168,6 +301,9 @@ body {
     cursor: pointer;
 }
 
+.btn-list .item:not(:last-child){
+margin-right: 8px;
+}
 .btn:focus,
 .btn:hover {
     color: var(--primary-white-color);
@@ -177,7 +313,39 @@ body {
 /*portfolio*/
 
 .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 34px;
+
     list-style: none;  
+}
+
+.portfolio-list .card {
+    width: calc((100% - 60px) / 3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.portfolio-list .card:nth-child(3n) {
+    margin-right: 0;
+}
+
+.portfolio-list .card:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-border {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid;
+    border-width: 0 1px 1px 1px;
+    border-color: var(--bg-card);
 }
 
 .portfolio-list a {
@@ -185,6 +353,9 @@ body {
 }
 
 .portfolio-list .title {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 24px;
     color: var(--primary-title-color);
 
     font-size: 18px;
@@ -192,6 +363,9 @@ body {
 }
 
 .portfolio-list .description {
+    margin-top: 4px;
+    margin-bottom: 0;
+    margin-left: 24px;
     color: var(--primary-text-color);
     font-size: 16px;
     line-height: 1.88;
@@ -205,18 +379,43 @@ footer {
     background-color: var(--bcg-gray-color); 
 }
 
-footer .logo {
+footer .container {
+   flex-direction: column;
+}
+
+.footer .logo {
+    display: inline-block;
+    margin-top: 60px;
+    margin-right: auto;
+
     color: var(--primary-white-color);
 }
 
 .footer-address {
+    display: inline-block;
+    margin-top: 28px;
+    margin-bottom: 60px;
+    margin-right: auto;
+    width: 207px;
+
     color: var(--primary-white-color);
     font-size: 14px;
     font-style: normal;
 }
 
-.footer-address .link,
-.footer-address .tel {
+.footer .contact-list {
+    display: block;
+    margin-top: 12px;
+}
+
+.footer .link,
+.footer .tel {
+    display: inline-block;
     color: var(--footer-white-color);
     font-weight: 400;
 }
+
+.footer .link {
+    margin-top: 10px;   
+    margin-left: 0;
+}   
