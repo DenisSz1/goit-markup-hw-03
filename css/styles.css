@@ -28,12 +28,15 @@ body {
 }
 
 .container {
-    display: flex;
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.aside {
+    display: flex;
     align-items: center;
 }
 
@@ -43,7 +46,15 @@ body {
     list-style: none;
 }
 
- 
+.hide {
+    visibility: hidden;
+    margin: 0;
+    width: 10px;
+} 
+
+img {
+    display: block;
+}
 
 /*logo*/
 
@@ -73,16 +84,15 @@ body {
     font-weight: 500;  
 }
 
-.nav-list .item {
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
 .nav-list .item:not(:last-child) {
     margin-right: 50px;
 }
 
 .nav-list .link  {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     color: var(--primary-title-color);
     text-decoration: none;
 }
@@ -92,7 +102,7 @@ body {
     margin-left: auto;
 }
 
-.contact-list .link {
+.contact-list .item:not(:first-child){
     margin-left: 40px;
 }
 
@@ -120,12 +130,15 @@ body {
 }
 
 header {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #ECECEC; 
+    border-bottom: 1px solid #ECECEC;
 }
 
 /*page studio start*/
+
+.main.section {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
 
 .section {
     padding-top: 94px;
@@ -175,12 +188,12 @@ header {
 
 /*section features*/
 
-.section .hide {
-    display: none;
-}
-
 .section-list {
     display: flex;
+}
+
+.section .size {
+    width: 270px;
 }
 
 .section .subtitle {
@@ -206,13 +219,10 @@ header {
 
 /*works*/
 
-.section .container {
-    flex-wrap: wrap;
-}
 
 .section-title {
     margin-top: 0;
-    margin-bottom: 50;
+    margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -241,12 +251,14 @@ header {
     border-radius: 0 0 4px 4px;
     background-color: #fff;
 }
+
 .team-list .item:not(:last-child) {
     margin-right: 30px;
 }
+
 .team-title {
     margin-top: 0;
-    margin-bottom: 50;
+    margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -256,8 +268,13 @@ header {
     font-size: 36px;
     line-height: 1.17;
 }
+
+.team-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .team .subtitle {
-    margin-top: 30px;
     text-align: center;
 
     color: var(--primary-title-color);
@@ -268,8 +285,6 @@ header {
 }
 
 .team-list p {
-    margin-top: 10px;
-    margin-bottom: 30px;
     text-align: center;
 }
 /*page studio end*/
@@ -284,6 +299,7 @@ header {
 
 .btn-list {
     display: flex;
+   
 }
 
 .btn {
@@ -315,7 +331,7 @@ margin-right: 8px;
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 34px;
+    margin-top: 40px;
 
     list-style: none;  
 }
@@ -340,9 +356,7 @@ margin-right: 8px;
 }
 
 .card-border {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding:20px 24px 20px 24px;
     border: solid;
     border-width: 0 1px 1px 1px;
     border-color: var(--bg-card);
@@ -353,9 +367,8 @@ margin-right: 8px;
 }
 
 .portfolio-list .title {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 24px;
+    margin: 0;
+
     color: var(--primary-title-color);
 
     font-size: 18px;
@@ -363,9 +376,7 @@ margin-right: 8px;
 }
 
 .portfolio-list .description {
-    margin-top: 4px;
-    margin-bottom: 0;
-    margin-left: 24px;
+    margin: 4px 0 0 0;
     color: var(--primary-text-color);
     font-size: 16px;
     line-height: 1.88;
@@ -376,25 +387,24 @@ margin-right: 8px;
 /*footer*/
 
 footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     background-color: var(--bcg-gray-color); 
 }
 
-footer .container {
-   flex-direction: column;
+.footer {
+    display: block;
 }
 
 .footer .logo {
-    display: inline-block;
-    margin-top: 60px;
     margin-right: auto;
 
     color: var(--primary-white-color);
 }
 
 .footer-address {
-    display: inline-block;
     margin-top: 28px;
-    margin-bottom: 60px;
     margin-right: auto;
     width: 207px;
 
@@ -403,19 +413,18 @@ footer .container {
     font-style: normal;
 }
 
-.footer .contact-list {
-    display: block;
+.footer-list {
     margin-top: 12px;
 }
 
-.footer .link,
-.footer .tel {
-    display: inline-block;
+.footer-list .item {
+    margin-top: 12px;
+}
+.footer-list .link,
+.footer-list .tel {
     color: var(--footer-white-color);
     font-weight: 400;
+    text-decoration: none;
 }
 
-.footer .link {
-    margin-top: 10px;   
-    margin-left: 0;
-}   
+ 
